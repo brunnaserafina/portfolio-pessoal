@@ -1,0 +1,74 @@
+import { AiFillHtml5 } from "react-icons/ai";
+import {
+  BiLogoCss3,
+  BiLogoJavascript,
+  BiLogoReact,
+  BiLogoTypescript,
+  BiLogoNodejs,
+  BiLogoMongodb,
+  BiLogoPostgresql,
+  BiLogoFirebase,
+  BiLogoJava,
+} from "react-icons/bi";
+import { DiRedis } from "react-icons/di";
+
+const techIcons = [
+  {
+    icon: <AiFillHtml5 fontSize={"40px"} color={"white"} />,
+    text: "HTML5",
+    color: "#FF5722",
+  },
+  {
+    icon: <BiLogoCss3 fontSize={"40px"} color={"white"} />,
+    text: "CSS3",
+    color: "#004CE8",
+  },
+  {
+    icon: <BiLogoJavascript fontSize={"40px"} color={"white"} />,
+    text: "JavaScript",
+    color: "#F7E018",
+  },
+
+  {
+    icon: <BiLogoTypescript fontSize={"40px"} color={"white"} />,
+    text: "TypeScript",
+    color: "#2D79C7",
+  },
+  {
+    icon: <BiLogoReact fontSize={"40px"} color={"white"} />,
+    text: "ReactJS",
+    color: "#61DBFB",
+  },
+  {
+    icon: <BiLogoNodejs fontSize={"40px"} color={"white"} />,
+    text: "NodeJS",
+    color: "#85BE49",
+  },
+  {
+    icon: <BiLogoJava fontSize={"40px"} color={"white"} />,
+    text: "Java",
+    color: "#EA2E2F",
+  },
+  {
+    icon: <BiLogoMongodb fontSize={"40px"} color={"white"} />,
+    text: "MongoDB",
+    color: "#07AC4F",
+  },
+  {
+    icon: <BiLogoPostgresql fontSize={"40px"} color={"white"} />,
+    text: "PostgreSQL",
+    color: "#2F6792",
+  },
+  {
+    icon: <DiRedis fontSize={"40px"} color={"white"} />,
+    text: "Redis",
+    color: "#D9281A",
+  },
+  {
+    icon: <BiLogoFirebase fontSize={"40px"} color={"white"} />,
+    text: "Firebase",
+    color: "#F7C427",
+  },
+];
+
+export default techIcons;

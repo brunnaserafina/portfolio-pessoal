@@ -48,10 +48,12 @@ export default function Home() {
 }
 
 const Wrapper = styled.section`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Dosis";
+  position: relative;
 
   nav img {
     width: 250px;
@@ -125,10 +127,8 @@ const Icon = styled.div`
 
 const Img = styled.img`
   width: 1024px;
-  position: fixed;
-  top: 100px;
+  margin-top: -12vh;
   z-index: -1;
-  margin-right: 20px;
 
   @media (max-width: 1023px) {
     width: 768px;
@@ -174,11 +174,6 @@ const ImgPerson = styled.img`
 
   @media (max-width: 767px) {
     display: initial;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+
   }
 `;
