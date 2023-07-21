@@ -134,6 +134,7 @@ export default function Contact({ home, scrollToSection }) {
               <a
                 href="https://www.linkedin.com/in/brunna-serafina/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <span>
                   <AiFillLinkedin />
@@ -144,7 +145,11 @@ export default function Contact({ home, scrollToSection }) {
               </a>
             </div>
             <div>
-              <a href="https://github.com/brunnaserafina" target="_blank">
+              <a
+                href="https://github.com/brunnaserafina"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <span>
                   <AiFillGithub />
                 </span>
