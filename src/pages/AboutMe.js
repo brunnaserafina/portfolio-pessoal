@@ -130,7 +130,7 @@ const Tech = styled.div`
   align-items: center;
   justify-content: center;
 
-  h3{
+  h3 {
     font-family: "Dosis";
     font-size: 21px;
     font-weight: 600;
@@ -226,6 +226,7 @@ const Container = styled.div`
     height: 80px;
     width: fit-content;
     text-align: center;
+    //filter: grayscale(100%);
   }
 
   span {
@@ -274,7 +275,11 @@ const Blockquote = styled.blockquote`
     font-style: italic;
   }
 `;
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  img {
+    
+  }
+`;
 
 const Apresentation = styled.div`
   background-color: #8dd18b;
