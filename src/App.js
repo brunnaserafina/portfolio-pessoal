@@ -4,6 +4,7 @@ import "../src/assets/styles/reset.css";
 import "../src/assets/styles/style.css";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Home />
       <AboutMe />
       <Projects />
+      <Contact />
     </div>
   );
 }
