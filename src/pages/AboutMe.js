@@ -9,10 +9,26 @@ import techIcons from "../lists/techIcons";
 import differentials from "../lists/differentials";
 import certifications from "../lists/certifications";
 
-export default function AboutMe() {
+export default function AboutMe({ aboutme }) {
   const [sliderRef, setSliderRef] = useState(null);
+  const [sliderRefTwo, setSliderRefTwo] = useState(null);
 
-  var settings = {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2800,
+    beforeChange: (current, next) => {
+      if (sliderRef) {
+        sliderRef.slickGoTo(next);
+      }
+    },
+  };
+
+  const settingsTwo = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -28,7 +44,7 @@ export default function AboutMe() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper ref={aboutme}>
       <Apresentation>
         <div>
           <h2>Citação</h2>
@@ -79,7 +95,7 @@ export default function AboutMe() {
         <Container>
           <div>
             <h2>FORMAÇÃO E CERTIFICAÇÕES</h2>
-            <Slider {...settings} ref={(slider) => setSliderRef(slider)}>
+            <Slider {...settings} ref={(slider) => setSliderRefTwo(slider)}>
               {certifications.map((certificate) => (
                 <div>
                   <span>
@@ -101,12 +117,10 @@ export default function AboutMe() {
         <Container>
           <div>
             <h2>DIFERENCIAIS</h2>
-            <Slider {...settings} ref={(slider) => setSliderRef(slider)}>
+            <Slider {...settingsTwo} ref={(slider) => setSliderRefTwo(slider)}>
               {differentials.map((differential) => (
                 <div>
-                  <span>
-                    <img src={differential.image} alt="" />
-                  </span>
+                  <span>{differential.icon}</span>
 
                   <h6>
                     {differential.title}
@@ -132,9 +146,9 @@ const Tech = styled.div`
 
   h3 {
     font-family: "Dosis";
-    font-size: 21px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
   }
 
   @media (max-width: 767px) {
@@ -163,8 +177,8 @@ const TechContainer = styled.div`
   p {
     margin-top: 8px;
     font-weight: 700;
-    color: #8dd18b;
-    text-transform: uppercase;
+    color: #d3d3d3;
+
     font-size: 14px;
   }
 
@@ -183,9 +197,6 @@ const TechDiv = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: 767px) {
-  }
 `;
 
 const Container = styled.div`
@@ -222,11 +233,18 @@ const Container = styled.div`
     justify-content: center;
   }
 
-  div img {
+  span {
     height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div img {
+    height: 50px;
     width: fit-content;
     text-align: center;
-    //filter: grayscale(100%);
   }
 
   span {
@@ -277,7 +295,6 @@ const Blockquote = styled.blockquote`
 `;
 const Wrapper = styled.section`
   img {
-    
   }
 `;
 

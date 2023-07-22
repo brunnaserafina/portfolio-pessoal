@@ -1,31 +1,96 @@
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 import logo from "../assets/images/Logo.png";
 import person from "../assets/images/Logo nav.png";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { BsTelephoneFill } from "react-icons/bs";
+import { AiFillGithub, AiFillLinkedin, AiOutlineClose } from "react-icons/ai";
+import { IoLogoWhatsapp } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useEffect, useRef, useState } from "react";
 
-export default function Home() {
+export default function Home({
+  scrollToSection,
+  home,
+  aboutme,
+  project,
+  contact,
+}) {
+  const [openMenuHamburger, setOpenMenuHamburger] = useState(false);
+
+  const logoRef = useRef(null);
+
+  function handleWhatsApp() {
+    const message = "Olá, Brunna!";
+
+    window.open(
+      `https://wa.me/5548996059421?text=${encodeURIComponent(message)}`
+    );
+  }
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      logoRef.current.classList.add("fadeIn");
+    }, 100);
+
+    const cleanupTimerId = setTimeout(() => {
+      logoRef.current.classList.remove("fadeIn");
+    }, 1000);
+
+    return () => {
+      clearTimeout(timerId);
+      clearTimeout(cleanupTimerId);
+    };
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper ref={home}>
+      {openMenuHamburger && (
+        <NavMenuHamburger>
+          <li onClick={() => scrollToSection(home)}>Home</li>
+          <li onClick={() => scrollToSection(aboutme)}>Sobre mim</li>
+          <img src="" alt="" />
+          <li onClick={() => scrollToSection(project)}>Projetos</li>
+          <li onClick={() => scrollToSection(contact)}>Contato</li>
+        </NavMenuHamburger>
+      )}
+
       <Menu>
-        <MenuHamburger>
-          <GiHamburgerMenu fontSize={"40px"} color="#8dd18b" />
+        <MenuHamburger
+          onClick={() => setOpenMenuHamburger(!openMenuHamburger)}
+          open={openMenuHamburger}
+        >
+          {openMenuHamburger ? (
+            <AiOutlineClose fontSize={"30px"} color="#8dd18b" />
+          ) : (
+            <GiHamburgerMenu fontSize={"35px"} color="#8dd18b" />
+          )}
         </MenuHamburger>
 
         <div>
           <span>
             <Icon>
-              <AiFillGithub fontSize={"25px"} />
+              <a
+                href="https://github.com/brunnaserafina"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub fontSize={"25px"} />
+              </a>
             </Icon>
             <Icon>
-              <AiFillLinkedin fontSize={"25px"} />
+              <a
+                href="https://www.linkedin.com/in/brunna-serafina/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillLinkedin fontSize={"25px"} />
+              </a>
             </Icon>
           </span>
 
           <span>
-            <Icon>
-              <BsTelephoneFill fontSize={"20px"} />
+            <Icon onClick={handleWhatsApp}>
+              <span>
+                <IoLogoWhatsapp fontSize={"25px"} />
+              </span>
             </Icon>
             <p>48 996059421</p>
           </span>
@@ -33,19 +98,41 @@ export default function Home() {
       </Menu>
 
       <nav>
-        <a href="">Home</a>
-        <a href="">Sobre mim</a>
+        <li onClick={() => scrollToSection(home)}>Home</li>
+        <li onClick={() => scrollToSection(aboutme)}>Sobre mim</li>
         <img src="" alt="" />
-        <a href="">Projetos</a>
-        <a href="">Contato</a>
+        <li onClick={() => scrollToSection(project)}>Projetos</li>
+        <li onClick={() => scrollToSection(contact)}>Contato</li>
       </nav>
 
-      <Img src={logo} alt="" />
+      <Img ref={logoRef} src={logo} alt="Background Logo" />
 
-      <ImgPerson src={person} alt="" />
+      <ImgPerson src={person} alt="Avatar" />
     </Wrapper>
   );
 }
+
+const fadeInAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const Wrapper = styled.section`
   width: 100%;
@@ -70,19 +157,33 @@ const Wrapper = styled.section`
     align-items: center;
   }
 
-  a {
+  li {
     margin: 45px;
     text-transform: uppercase;
     text-decoration: none;
     color: #8dd18b;
     font-size: 20px;
     font-weight: 700;
+    position: relative;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  li:hover::after {
+    content: "⌵";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    font-weight: bold;
+    transform: translateX(-50%);
   }
 
   p {
     color: #8dd18b;
     font-weight: 500;
     font-size: 18px;
+    cursor: pointer;
   }
 
   @media (max-width: 1023px) {
@@ -94,11 +195,40 @@ const Wrapper = styled.section`
     p {
       font-size: 14px;
     }
+
+    li {
+      margin: 45px 20px;
+    }
   }
 
   @media (max-width: 767px) {
+    background-image: url("https://i.pinimg.com/564x/5b/67/ce/5b67ce82a211443957c71d0c2624c7ae.jpg");
+    background-size: cover;
+
     nav {
       display: none;
+    }
+  }
+`;
+
+const NavMenuHamburger = styled.div`
+  display: none;
+
+  li {
+    margin: 20px 0;
+  }
+
+  @media (max-width: 767px) {
+    background-color: #262626;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: ${({ open }) => (open ? null : fadeIn)} 1s ease;
+
+    li {
+      font-size: 18px;
     }
   }
 `;
@@ -113,6 +243,30 @@ const Icon = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 8px;
+  cursor: pointer;
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  a {
+    color: #262626;
+  }
+
+  span {
+    cursor: pointer;
+    color: #262626;
+  }
+
+  a:hover,
+  span:hover {
+    color: white;
+    transition: color 0.3s ease;
+  }
 
   @media (max-width: 1023px) {
     width: 30px;
@@ -120,8 +274,8 @@ const Icon = styled.div`
   }
 
   @media (max-width: 767px) {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 `;
 
@@ -129,6 +283,10 @@ const Img = styled.img`
   width: 1024px;
   margin-top: -12vh;
   z-index: -1;
+
+  &.fadeIn {
+    animation: ${fadeInAnimation} 2s ease;
+  }
 
   @media (max-width: 1023px) {
     width: 768px;
@@ -174,6 +332,5 @@ const ImgPerson = styled.img`
 
   @media (max-width: 767px) {
     display: initial;
-
   }
 `;

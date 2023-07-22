@@ -1,13 +1,18 @@
 import styled from "styled-components";
 import { useState } from "react";
-import {
-  AiFillLinkedin,
-  AiFillGithub,
-  AiFillPhone,
-  AiOutlineMail,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
-export default function Contact({ home, scrollToSection }) {
+export default function Contact({
+  scrollToSection,
+  home,
+  aboutme,
+  project,
+  contact,
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,43 +22,51 @@ export default function Contact({ home, scrollToSection }) {
   function sendEmail(e) {
     e.preventDefault();
 
-    // const templateParams = {
-    //   from_name: name,
-    //   subject: subject,
-    //   message: message,
-    //   email: email,
-    //   phone: phone,
-    // };
+    const templateParams = {
+      from_name: name,
+      subject: subject,
+      message: message,
+      email: email,
+      phone: phone,
+    };
 
-    // emailjs
-    //   .send(
-    //     "service_hlzg1k7",
-    //     "template_y27nkig",
-    //     templateParams,
-    //     "ClZtahMJijyg_z-ha"
-    //   )
-    //   .then(
-    //     (response) => {
-    //       console.log("E-mail enviado!", response.status, response.text);
-    //       setName("");
-    //       setEmail("");
-    //       setPhone("");
-    //       setSubject("");
-    //       setMessage("");
-    //     },
-    //     (err) => {
-    //       console.log("Erro: ", err);
-    //     }
-    //   );
+    emailjs
+      .send(
+        "service_hlzg1k7",
+        "template_y27nkig",
+        templateParams,
+        "ClZtahMJijyg_z-ha"
+      )
+      .then(
+        (response) => {
+          toast.success("Email enviado com sucesso!");
+          setName("");
+          setEmail("");
+          setPhone("");
+          setSubject("");
+          setMessage("");
+        },
+        (err) => {
+          toast.error("Erro ao enviar e-mail, tente novamente!");
+        }
+      );
+  }
+
+  function handleWhatsApp() {
+    const message = "Olá, Brunna!";
+
+    window.open(
+      `https://wa.me/5548996059421?text=${encodeURIComponent(message)}`
+    );
   }
 
   return (
-    <Wrapper>
+    <Wrapper ref={contact}>
       <TalkToMe>
         <h2>Fale comigo!</h2>
         <p>
-          Resta alguma dúvida? Preencha os campos abaixo com os seguintes dados
-          que em breve entrarei em contato.
+          Resta alguma dúvida? Preencha os campos abaixo que em breve entrarei
+          em contato.
         </p>
 
         <form onSubmit={sendEmail}>
@@ -66,6 +79,7 @@ export default function Contact({ home, scrollToSection }) {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 required
+                autoFocus
               />
             </div>
             <div>
@@ -121,10 +135,10 @@ export default function Contact({ home, scrollToSection }) {
           <h2>Menu</h2>
 
           <ul>
-            <li>Home</li>
-            <li>Sobre Mim</li>
-            <li>Projetos</li>
-            <li>Contato</li>
+            <li onClick={() => scrollToSection(home)}>Home</li>
+            <li onClick={() => scrollToSection(aboutme)}>Sobre Mim</li>
+            <li onClick={() => scrollToSection(project)}>Projetos</li>
+            <li onClick={() => scrollToSection(contact)}>Contato</li>
           </ul>
         </Menu>
         <Contacts>
@@ -159,19 +173,19 @@ export default function Contact({ home, scrollToSection }) {
               </a>
             </div>
             <div>
-              <a href="tel:+5548996059421">
+              <h6 onClick={handleWhatsApp}>
                 <span>
-                  <AiFillPhone />
+                  <IoLogoWhatsapp />
                 </span>
 
-                <h5>Telefone</h5>
+                <h5>WhatsApp</h5>
                 <p>(48) 99605-9421</p>
-              </a>
+              </h6>
             </div>
             <div>
               <a href="mailto:brunnaserafina@gmail.com">
                 <span>
-                  <AiOutlineMail />
+                  <MdEmail />
                 </span>
 
                 <h5>E-mail</h5>
@@ -217,7 +231,7 @@ const TalkToMe = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 768px;
+  width: 640px;
 
   h2 {
     margin-top: 5vh;
@@ -262,9 +276,13 @@ const TalkToMe = styled.div`
     cursor: pointer;
   }
 
+  button:hover {
+    color: white;
+  }
+
   input {
     height: 40px;
-    width: 370px;
+    width: 310px;
     margin-bottom: 15px;
   }
 
@@ -286,7 +304,7 @@ const TalkToMe = styled.div`
     width: 85vw;
 
     h2 {
-      font-size: 25px;
+      font-size: 22px;
       margin-top: 35px;
     }
 
@@ -320,7 +338,7 @@ const Menu = styled.div`
   width: 8vw;
 
   ul {
-    margin-top: 10px;
+    margin-top: 4px;
   }
 
   li {
@@ -328,6 +346,11 @@ const Menu = styled.div`
     margin: 12px 0;
     text-transform: uppercase;
     font-family: "Dosis";
+    cursor: pointer;
+  }
+
+  li:hover {
+    text-decoration: underline;
   }
 
   h2 {
@@ -352,6 +375,10 @@ const Menu = styled.div`
       margin-top: 0;
       margin-bottom: 30px;
     }
+
+    h2 {
+      font-size: 22px;
+    }
   }
 `;
 
@@ -365,11 +392,13 @@ const Contacts = styled.div`
     text-align: start;
   }
 
-  a {
+  a,
+  h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 14px;
+    cursor: pointer;
   }
 
   > div > div {
@@ -381,11 +410,13 @@ const Contacts = styled.div`
     margin: 30px 10px;
   }
 
-  > div > div a {
+  > div > div a,
+  > div > div h6 {
     text-align: center;
   }
 
-  > div > div a:hover {
+  > div > div a:hover,
+  > div > div h6:hover {
     text-decoration: underline;
     color: white;
   }
@@ -393,8 +424,8 @@ const Contacts = styled.div`
   span {
     font-size: 30px;
     background-color: #8dd18b;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -409,10 +440,11 @@ const Contacts = styled.div`
     -o-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+    color: white;
   }
 
   h5 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
     color: white;
   }

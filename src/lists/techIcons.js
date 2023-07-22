@@ -15,12 +15,12 @@ import { DiRedis } from "react-icons/di";
 const techIcons = [
   {
     icon: <AiFillHtml5 fontSize={"40px"} color={"white"} />,
-    text: "HTML5",
+    text: "Html5",
     color: "#FF5722",
   },
   {
     icon: <BiLogoCss3 fontSize={"40px"} color={"white"} />,
-    text: "CSS3",
+    text: "Css3",
     color: "#004CE8",
   },
   {

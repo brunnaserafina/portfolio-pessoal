@@ -1,14 +1,15 @@
 import { styled } from "styled-components";
 import projects from "../lists/projects";
 
-export default function Projects() {
+export default function Projects({ project }) {
   return (
-    <Wrapper>
+    <Wrapper ref={project}>
       <div>
         <Description>
           <h1>PORTFÓLIO</h1>
           <p>Conheça os principais projetos desenvolvidos por mim</p>
         </Description>
+
         <ProjectsContainer>
           {projects.map((project) => (
             <div>
@@ -35,7 +36,7 @@ export default function Projects() {
 const Wrapper = styled.div`
   background-color: #8dd18b;
   padding: 10vh 0;
-  
+
   > div {
     display: flex;
     flex-direction: column;
@@ -58,6 +59,7 @@ const Description = styled.div`
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
+    color: #8dd18b;
   }
 
   @media (max-width: 767px) {
@@ -65,7 +67,7 @@ const Description = styled.div`
     width: 100vw;
 
     h1 {
-      font-size: 16px;
+      font-size: 22px;
     }
 
     p {
@@ -166,6 +168,10 @@ const ProjectsContainer = styled.div`
 
     span {
       display: none;
+    }
+
+    > div {
+      margin: 2px;
     }
   }
 
