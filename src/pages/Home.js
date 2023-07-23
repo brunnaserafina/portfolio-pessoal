@@ -327,10 +327,11 @@ const Menu = styled.div`
 `;
 
 const ImgPerson = styled.img`
-  width: 270px;
   display: none;
 
   @media (max-width: 767px) {
     display: initial;
+    width: 220px;
+    margin: 70px 0;
   }
 `;

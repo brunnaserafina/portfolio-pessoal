@@ -1,7 +1,45 @@
 import { styled } from "styled-components";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import projects from "../lists/projects";
+import { useRef, useState } from "react";
 
 export default function Projects({ project }) {
+  const projectsContainerRef = useRef(null);
+  const [scrollLeftVisible, setScrollLeftVisible] = useState(false);
+  const [scrollRightVisible, setScrollRightVisible] = useState(true);
+
+  const checkArrowsVisibility = () => {
+    if (projectsContainerRef.current) {
+      const container = projectsContainerRef.current;
+      const scrollLeftVisible = container.scrollLeft > 0;
+      const scrollRightVisible =
+        container.scrollLeft < container.scrollWidth - container.clientWidth;
+
+      setScrollLeftVisible(scrollLeftVisible);
+      setScrollRightVisible(scrollRightVisible);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (projectsContainerRef.current) {
+      projectsContainerRef.current.scrollBy({
+        top: 0,
+        left: -200, // Adjust this value to control the scrolling speed
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (projectsContainerRef.current) {
+      projectsContainerRef.current.scrollBy({
+        top: 0,
+        left: 200, // Adjust this value to control the scrolling speed
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <Wrapper ref={project}>
       <div>
@@ -10,7 +48,18 @@ export default function Projects({ project }) {
           <p>Conheça os principais projetos desenvolvidos por mim</p>
         </Description>
 
-        <ProjectsContainer>
+        <ArrowLeft visible={scrollLeftVisible} onClick={scrollLeft}>
+          <BiLeftArrowAlt fontSize={"35px"} />
+        </ArrowLeft>
+
+        <ArrowRight visible={scrollRightVisible} onClick={scrollRight}>
+          <BiRightArrowAlt fontSize={"35px"} />
+        </ArrowRight>
+
+        <ProjectsContainer
+          ref={projectsContainerRef}
+          onScroll={checkArrowsVisibility}
+        >
           {projects.map((project) => (
             <div>
               <img src={project.image} alt={project.title} />
@@ -32,6 +81,61 @@ export default function Projects({ project }) {
     </Wrapper>
   );
 }
+
+const ArrowLeft = styled.div`
+  position: absolute;
+  background-color: #8dd18b;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 10px;
+  z-index: 2;
+  cursor: pointer;
+  display: ${(props) => (props.visible ? "flex" : "none")};
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    color: white;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const ArrowRight = styled.div`
+  position: absolute;
+  right: 10px;
+  background-color: #8dd18b;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  display: ${(props) => (props.visible ? "flex" : "none")};
+
+  &:hover {
+    color: white;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: color 0.3s ease;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
 
 const Wrapper = styled.div`
   background-color: #8dd18b;
@@ -90,6 +194,7 @@ const ProjectsContainer = styled.div`
   scrollbar-width: thin;
   scrollbar-color: #8dd18b #262626;
   display: flex;
+  position: relative;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -155,6 +260,7 @@ const ProjectsContainer = styled.div`
     height: fit-content;
     padding: 5px;
     font-size: 14px;
+    
 
     img {
       height: 50vh;
@@ -172,6 +278,8 @@ const ProjectsContainer = styled.div`
 
     > div {
       margin: 2px;
+      flex: 0 0 90vw;
+      scroll-snap-align: center;
     }
   }
 

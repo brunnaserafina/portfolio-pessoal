@@ -21,6 +21,7 @@ export default function AboutMe({ aboutme }) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2800,
+    arrows: false,
     beforeChange: (current, next) => {
       if (sliderRef) {
         sliderRef.slickGoTo(next);
@@ -36,6 +37,7 @@ export default function AboutMe({ aboutme }) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2800,
+    arrows: false,
     beforeChange: (current, next) => {
       if (sliderRef) {
         sliderRef.slickGoTo(next);

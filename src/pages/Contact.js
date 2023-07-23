@@ -79,7 +79,6 @@ export default function Contact({
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 required
-                autoFocus
               />
             </div>
             <div>
@@ -389,7 +388,7 @@ const Contacts = styled.div`
   }
 
   h2 {
-    text-align: start;
+    text-align: center;
   }
 
   a,
