@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import { useRef } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   const home = useRef(null);
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <Home
+      {/* <Home
         scrollToSection={scrollToSection}
         home={home}
         aboutme={aboutme}
@@ -40,7 +41,9 @@ function App() {
         aboutme={aboutme}
         project={project}
         contact={contact}
-      />
+      /> */}
+
+      <ProjectDetail />
     </div>
   );
 }
