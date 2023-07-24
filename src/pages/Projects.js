@@ -2,9 +2,11 @@ import { styled } from "styled-components";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import projects from "../lists/projects";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Projects({ project }) {
+export default function Projects({ project, setIdProjectSelected }) {
   const projectsContainerRef = useRef(null);
+  const navigate = useNavigate();
   const [scrollLeftVisible, setScrollLeftVisible] = useState(false);
   const [scrollRightVisible, setScrollRightVisible] = useState(true);
 
@@ -24,17 +26,21 @@ export default function Projects({ project }) {
     if (projectsContainerRef.current) {
       projectsContainerRef.current.scrollBy({
         top: 0,
-        left: -200, // Adjust this value to control the scrolling speed
+        left: -200,
         behavior: "smooth",
       });
     }
   };
 
+  function navigateToProject(projectName) {
+    navigate(`/project/${projectName}`);
+  }
+
   const scrollRight = () => {
     if (projectsContainerRef.current) {
       projectsContainerRef.current.scrollBy({
         top: 0,
-        left: 200, // Adjust this value to control the scrolling speed
+        left: 200,
         behavior: "smooth",
       });
     }
@@ -48,11 +54,14 @@ export default function Projects({ project }) {
           <p>Conheça os principais projetos desenvolvidos por mim</p>
         </Description>
 
-        <ArrowLeft visible={scrollLeftVisible} onClick={scrollLeft}>
+        <ArrowLeft visible={scrollLeftVisible.toString()} onClick={scrollLeft}>
           <BiLeftArrowAlt fontSize={"35px"} />
         </ArrowLeft>
 
-        <ArrowRight visible={scrollRightVisible} onClick={scrollRight}>
+        <ArrowRight
+          visible={scrollRightVisible.toString()}
+          onClick={scrollRight}
+        >
           <BiRightArrowAlt fontSize={"35px"} />
         </ArrowRight>
 
@@ -60,19 +69,25 @@ export default function Projects({ project }) {
           ref={projectsContainerRef}
           onScroll={checkArrowsVisibility}
         >
-          {projects.map((project) => (
-            <div>
-              <img src={project.image} alt={project.title} />
+          {projects.map((project, index) => (
+            <div key={index}>
+              <img
+                src={project.image}
+                alt={project.title}
+                onClick={() => navigateToProject(project.pathName)}
+              />
               <div>
                 <h1>{project.title}</h1>
 
                 <div>
-                  {project.techs.map((tech) => (
-                    <span>{tech}</span>
+                  {project.techs.map((tech, index) => (
+                    <span key={index}>{tech}</span>
                   ))}
                 </div>
 
-                <button>ver detalhes do projeto</button>
+                <button onClick={() => navigateToProject(project.pathName)}>
+                  ver detalhes do projeto
+                </button>
               </div>
             </div>
           ))}
@@ -93,7 +108,7 @@ const ArrowLeft = styled.div`
   left: 10px;
   z-index: 2;
   cursor: pointer;
-  display: ${(props) => (props.visible ? "flex" : "none")};
+  display: ${(props) => (props.visible === "true" ? "flex" : "none")};
 
   &:hover {
     -webkit-transform: scale(1.1);
@@ -120,7 +135,7 @@ const ArrowRight = styled.div`
   align-items: center;
   z-index: 2;
   cursor: pointer;
-  display: ${(props) => (props.visible ? "flex" : "none")};
+  display: ${(props) => (props.visible === "true" ? "flex" : "none")};
 
   &:hover {
     color: white;
@@ -201,12 +216,12 @@ const ProjectsContainer = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: white;
+    background: #8dd18b;
     border-radius: 10px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #8dd18b;
+    background-color: white;
     border-radius: 10px;
     border: 2px solid #262626;
   }
@@ -250,17 +265,29 @@ const ProjectsContainer = styled.div`
     border: 1px solid #8dd18b;
     color: #8dd18b;
     padding: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+  button:hover {
+    color: white;
+    border-color: white;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
   }
 
   img {
     width: 50vw;
+    cursor: pointer;
   }
 
   @media (max-width: 767px) {
     height: fit-content;
     padding: 5px;
     font-size: 14px;
-    
 
     img {
       height: 50vh;

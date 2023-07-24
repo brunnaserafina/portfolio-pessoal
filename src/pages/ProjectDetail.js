@@ -1,50 +1,77 @@
 import { styled } from "styled-components";
-import projectToDoList from "../assets/images/project-todolist.png";
-import { AiFillHtml5, AiOutlineClose } from "react-icons/ai";
+import projectToDoList from "../assets/images/laptop.png";
+import gifProject from "../assets/images/caopture.gif";
+import { AiOutlineClose } from "react-icons/ai";
 import { PiSquaresFourFill } from "react-icons/pi";
-import Contact from "./Contact";
+import { useNavigate, useParams } from "react-router-dom";
+import projects from "../lists/projects";
 
 export default function ProjectDetail() {
+  const navigate = useNavigate();
+  const { projectName } = useParams();
+
+  const project = projects.find((project) => project.pathName === projectName);
+
+  if (!project) {
+    navigate("/");
+  }
+
+  function navigateHome() {
+    navigate("/");
+  }
+
   return (
     <>
       <Wrapper>
         <Triangle />
 
         <Title>
-          <h2>To-Do List</h2>
+          <h2>{project?.title}</h2>
 
-          <CloseIconWrapper>
+          <CloseIconWrapper onClick={navigateHome}>
             <RotatingCloseIcon color={"#2e4b2d"} />
           </CloseIconWrapper>
         </Title>
 
         <ProjectInfo>
-          <img src={projectToDoList} alt="Projeto X" />
+          <Laptop>
+            <img src={projectToDoList} alt="Projeto X" />
+
+            <Gif src={project.laptopImage} alt="Gif" />
+          </Laptop>
 
           <ul>
-            <li>Acessar a aplicação</li>
+            {/* <li>Acessar a aplicação</li> */}
+
             <li>
+              <a href={project?.repositoryFront} target="_blank" rel="noreferrer">
+                Repositório front-end
+              </a>
+            </li>
+
+            <li>
+              <a href={project?.repositoryBack} target="_blank" rel="noreferrer">
+                Repositório back-end
+              </a>
+            </li>
+
+            {/* <li>
               <PiSquaresFourFill color={"#d3d3d3"} />
               Abrir em Galeria
-            </li>
-            <li>Repositório no github</li>
+            </li> */}
           </ul>
 
           <HorizontalLine />
 
-          <h1>SITE PARA GERENCIAR TAREFAS</h1>
-          <p>
-            Esta é uma Single-Page Application para facilitar as reservas de
-            filme no cinema, você pode escolher o filme, a sessão e o assento.
-            Depois você só precisa identificar seu nome e CPF para concluir a
-            reserva.
-          </p>
+          <h1>{project?.subtitle}</h1>
+          <p>{project?.description}</p>
 
           <div>
-            <div>
-              <AiFillHtml5 />
-              <p>HTML5</p>
-            </div>
+            {project.techs.map((tech, index) => (
+              <div key={index}>
+                <p>{tech}</p>
+              </div>
+            ))}
           </div>
         </ProjectInfo>
       </Wrapper>
@@ -118,6 +145,7 @@ const ProjectInfo = styled.div`
     font-weight: 600;
     margin-bottom: 8px;
     color: #2e4b2d;
+    text-transform: uppercase;
   }
 
   > p {
@@ -127,6 +155,7 @@ const ProjectInfo = styled.div`
 
   > div {
     margin-top: 20px;
+    display: flex;
   }
 
   > div > div {
@@ -134,16 +163,19 @@ const ProjectInfo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    min-width: 80px;
     height: 30px;
     border-radius: 5px;
     color: white;
     font-weight: 600;
+    margin-right: 10px;
+    padding: 5px;
   }
 
   > div > div > p {
     margin-left: 3px;
     font-size: 16px;
+    text-transform: uppercase;
   }
 
   ul {
@@ -159,6 +191,14 @@ const ProjectInfo = styled.div`
     cursor: pointer;
     color: #2e4b2d;
   }
+
+  a {
+    color: #2e4b2d;
+  }
+
+  li:hover {
+    font-weight: 600;
+  }
 `;
 
 const Triangle = styled.div`
@@ -169,4 +209,20 @@ const Triangle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+`;
+
+const Laptop = styled.div`
+  position: relative;
+`;
+
+const Gif = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 590px !important;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
 `;

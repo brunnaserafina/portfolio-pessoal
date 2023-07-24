@@ -172,14 +172,14 @@ export default function Contact({
               </a>
             </div>
             <div>
-              <h6 onClick={handleWhatsApp}>
+              <li onClick={handleWhatsApp}>
                 <span>
                   <IoLogoWhatsapp />
                 </span>
 
                 <h5>WhatsApp</h5>
                 <p>(48) 99605-9421</p>
-              </h6>
+              </li>
             </div>
             <div>
               <a href="mailto:brunnaserafina@gmail.com">
@@ -392,7 +392,7 @@ const Contacts = styled.div`
   }
 
   a,
-  h6 {
+  li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -410,12 +410,12 @@ const Contacts = styled.div`
   }
 
   > div > div a,
-  > div > div h6 {
+  > div > div li {
     text-align: center;
   }
 
   > div > div a:hover,
-  > div > div h6:hover {
+  > div > div li:hover {
     text-decoration: underline;
     color: white;
   }

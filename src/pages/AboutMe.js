@@ -84,8 +84,8 @@ export default function AboutMe({ aboutme }) {
       <Tech>
         <h3>TECNOLOGIAS:</h3>
         <TechContainer>
-          {techIcons.map((icon) => (
-            <div key={icon.text}>
+          {techIcons.map((icon, index) => (
+            <div key={index}>
               <TechDiv color={icon.color}>{icon.icon}</TechDiv>
               <p>{icon.text}</p>
             </div>
@@ -98,8 +98,8 @@ export default function AboutMe({ aboutme }) {
           <div>
             <h2>FORMAÇÃO E CERTIFICAÇÕES</h2>
             <Slider {...settings} ref={(slider) => setSliderRefTwo(slider)}>
-              {certifications.map((certificate) => (
-                <div>
+              {certifications.map((certificate, index) => (
+                <div key={index}>
                   <span>
                     <img src={certificate.image} alt="" />
                   </span>
@@ -120,8 +120,8 @@ export default function AboutMe({ aboutme }) {
           <div>
             <h2>DIFERENCIAIS</h2>
             <Slider {...settingsTwo} ref={(slider) => setSliderRefTwo(slider)}>
-              {differentials.map((differential) => (
-                <div>
+              {differentials.map((differential, index) => (
+                <div key={index}>
                   <span>{differential.icon}</span>
 
                   <h6>
@@ -205,6 +205,7 @@ const Container = styled.div`
   width: 480px;
   height: 250px;
   background-color: #8dd18b;
+  border-top: 5px solid white;
   border-radius: 20px;
   margin: 30px;
   padding: 30px;
@@ -307,6 +308,7 @@ const Apresentation = styled.div`
   justify-content: center;
   height: 5 0vh;
   padding: 50px;
+  border-top: 2px solid white;
 
   h2 {
     text-transform: uppercase;
