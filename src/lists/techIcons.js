@@ -8,7 +8,9 @@ import {
   BiLogoMongodb,
   BiLogoPostgresql,
   BiLogoFirebase,
+  BiLogoSpringBoot,
   BiLogoJava,
+  BiLogoAngular,
 } from "react-icons/bi";
 import { DiRedis } from "react-icons/di";
 
@@ -40,6 +42,11 @@ const techIcons = [
     color: "#61DBFB",
   },
   {
+    icon: <BiLogoAngular fontSize={"40px"} color={"white"} />,
+    text: "Angular",
+    color: "#DD0031",
+  },
+  {
     icon: <BiLogoNodejs fontSize={"40px"} color={"white"} />,
     text: "NodeJS",
     color: "#85BE49",
@@ -48,6 +55,11 @@ const techIcons = [
     icon: <BiLogoJava fontSize={"40px"} color={"white"} />,
     text: "Java",
     color: "#EA2E2F",
+  },
+  {
+    icon: <BiLogoSpringBoot fontSize={"40px"} color={"white"} />,
+    text: "Spring",
+    color: "#6CB33E",
   },
   {
     icon: <BiLogoMongodb fontSize={"40px"} color={"white"} />,
@@ -64,11 +76,11 @@ const techIcons = [
     text: "Redis",
     color: "#D9281A",
   },
-  {
-    icon: <BiLogoFirebase fontSize={"40px"} color={"white"} />,
-    text: "Firebase",
-    color: "#F7C427",
-  },
+  // {
+  //   icon: <BiLogoFirebase fontSize={"40px"} color={"white"} />,
+  //   text: "Firebase",
+  //   color: "#F7C427",
+  // },
 ];
 
 export default techIcons;

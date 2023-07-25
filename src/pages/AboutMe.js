@@ -54,14 +54,13 @@ export default function AboutMe({ aboutme }) {
           <Blockquote>
             <QuoteLeftIcon />
             <p>
-              A tecnologia permite que as pessoas levem suas ideias mais longe
-              do que nunca, mas também exige que sejamos mais responsáveis por
-              aquilo que criamos.
+              A arte de programar consiste na arte de organizar e dominar a
+              complexidade.
             </p>
             <QuoteRightIcon />
           </Blockquote>
 
-          <h5>- Marissa Mayer</h5>
+          <h5>- Dijkstra</h5>
         </div>
 
         <img src={perfil} alt="Perfil" />
@@ -69,14 +68,13 @@ export default function AboutMe({ aboutme }) {
         <div>
           <h1>Olá,</h1>
           <p>
-            sou a Brunna Serafina. Possuo um ano de estudo na área de
+            sou a Brunna Serafina. Possuo um ano de experiência na área de
             desenvolvimento web full-stack, tanto em equipes colaborativas como
-            em projetos individuais. Minhas maiores habilidades são com o
-            framework React.js no front-end, Node.js com TypeScript no back-end
-            e banco de dados relacionais com PostgreSQL. Também tive a
-            oportunidade de aprender sobre soft-skills e metodologias ágeis
-            durante minha participação em um bootcamp e, atualmente, estou
-            aprofundando meus estudos em Java e Spring Boot.
+            em projetos individuais. Durante minha participação no bootcamp da
+            Driven Education tive a oportunidade de desenvolver minhas
+            hard-skills, ter contato com metodologias ágeis e estudar sobre a
+            importância de soft-skills como autodidatismo, gestão de tempo,
+            gestão emocional e trabalho em equipe.
           </p>
         </div>
       </Apresentation>
@@ -151,6 +149,7 @@ const Tech = styled.div`
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 15px;
+    color: #2e4b2d;
   }
 
   @media (max-width: 767px) {
@@ -166,6 +165,7 @@ const TechContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 90vw;
+  padding: 3px 0;
 
   > div {
     width: 85px;
@@ -179,7 +179,7 @@ const TechContainer = styled.div`
   p {
     margin-top: 8px;
     font-weight: 700;
-    color: #d3d3d3;
+    color: #2e4b2d;
 
     font-size: 14px;
   }
@@ -213,7 +213,7 @@ const Container = styled.div`
 
   h2 {
     text-transform: uppercase;
-    color: #262626;
+    color: #2e4b2d;
     font-weight: 700;
     margin-bottom: 10px;
     font-family: "Dosis";
@@ -221,7 +221,7 @@ const Container = styled.div`
   }
 
   h6 {
-    color: #262626;
+    color: #2e4b2d;
     font-family: "Raleway";
     font-size: 15px;
     text-align: center;
@@ -297,8 +297,8 @@ const Blockquote = styled.blockquote`
   }
 `;
 const Wrapper = styled.section`
-  img {
-  }
+  background-color: #c4c4c4;
+  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
 `;
 
 const Apresentation = styled.div`
@@ -308,30 +308,30 @@ const Apresentation = styled.div`
   justify-content: center;
   height: 5 0vh;
   padding: 50px;
-  border-top: 2px solid white;
+  /* border-top: 2px solid white; */
 
   h2 {
     text-transform: uppercase;
-    color: #00000;
+    color: #2e4b2d;
     font-weight: 700;
     font-family: "Dosis";
   }
 
   p {
     max-width: 300px;
-    color: #00000;
+    color: #2e4b2d;
     line-height: 17px;
     font-size: 15px;
     text-align: justify;
   }
 
   h5 {
-    color: #00000;
+    color: #2e4b2d;
     text-align: end;
   }
 
   h1 {
-    color: #00000;
+    color: #2e4b2d;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 8px;

@@ -140,6 +140,7 @@ export default function Contact({
             <li onClick={() => scrollToSection(contact)}>Contato</li>
           </ul>
         </Menu>
+
         <Contacts>
           <h2>Contatos</h2>
           <div>
@@ -214,6 +215,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  background-color: #8dd18b;
 
   h2 {
     font-size: 22px;
@@ -222,7 +224,7 @@ const Wrapper = styled.div`
     text-align: center;
     font-family: "Dosis";
     text-transform: uppercase;
-    color: #8dd18b;
+    color: #2e4b2d;
   }
 `;
 
@@ -237,13 +239,13 @@ const TalkToMe = styled.div`
   }
 
   p {
-    color: #8dd18b;
+    color: #2e4b2d;
     font-size: 16px;
     margin-bottom: 30px;
   }
 
   label {
-    color: #8dd18b;
+    color: #2e4b2d;
     margin: 5px 0px;
     display: flex;
     font-size: 14px;
@@ -267,8 +269,8 @@ const TalkToMe = styled.div`
   button {
     margin-bottom: 100px;
     width: 100%;
-    background-color: #8dd18b;
-    color: #262626;
+    background-color: #2e4b2d;
+    color: white;
     font-weight: 600;
     font-size: 17px;
     margin-top: 10px;
@@ -276,7 +278,7 @@ const TalkToMe = styled.div`
   }
 
   button:hover {
-    color: white;
+    color: #8dd18b;
   }
 
   input {
@@ -341,7 +343,7 @@ const Menu = styled.div`
   }
 
   li {
-    color: white;
+    color: #2e4b2d;
     margin: 12px 0;
     text-transform: uppercase;
     font-family: "Dosis";
@@ -414,42 +416,41 @@ const Contacts = styled.div`
     text-align: center;
   }
 
-  > div > div a:hover,
-  > div > div li:hover {
+  > div > div:hover a,
+  > div > div:hover li {
     text-decoration: underline;
-    color: white;
   }
 
   span {
-    font-size: 30px;
-    background-color: #8dd18b;
+    font-size: 24px;
+    background-color: #2e4b2d;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: #262626;
+    color: white;
     margin-bottom: 10px;
   }
 
-  span:hover {
+  > div > div:hover span {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    color: white;
+    color: #8dd18b;
   }
 
   h5 {
     font-size: 16px;
     margin-bottom: 5px;
-    color: white;
+    color: #2e4b2d;
   }
 
   p {
-    color: white;
+    color: #2e4b2d;
   }
 
   @media (max-width: 767px) {

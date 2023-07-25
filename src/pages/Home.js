@@ -1,10 +1,10 @@
-import { keyframes, styled } from "styled-components";
-import logo from "../assets/images/Logo.png";
-import person from "../assets/images/Logo nav.png";
-import { AiFillGithub, AiFillLinkedin, AiOutlineClose } from "react-icons/ai";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useRef, useState } from "react";
+import { keyframes, styled } from "styled-components";
+import { AiFillGithub, AiFillLinkedin, AiOutlineClose } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoLogoWhatsapp } from "react-icons/io";
+import logo from "../assets/images/Logo2.png";
+import person from "../assets/images/Logo nav.png";
 
 export default function Home({
   scrollToSection,
@@ -14,7 +14,6 @@ export default function Home({
   contact,
 }) {
   const [openMenuHamburger, setOpenMenuHamburger] = useState(false);
-
   const logoRef = useRef(null);
 
   function handleWhatsApp() {
@@ -86,14 +85,14 @@ export default function Home({
             </Icon>
           </span>
 
-          <span>
-            <Icon onClick={handleWhatsApp}>
+          <WhatsappDiv onClick={handleWhatsApp}>
+            <Icon>
               <span>
                 <IoLogoWhatsapp fontSize={"25px"} />
               </span>
             </Icon>
             <p>48 996059421</p>
-          </span>
+          </WhatsappDiv>
         </div>
       </Menu>
 
@@ -112,10 +111,31 @@ export default function Home({
   );
 }
 
+const HorizontalLine = styled.div`
+  height: 5px;
+  background-color: #8dd18b;
+  width: 100%;
+  margin-bottom: 4vh;
+  position: absolute;
+  bottom: -40px;
+  z-index: 2;
+`;
+
+const WhatsappDiv = styled.span`
+  p {
+    color: #2e4b2d !important;
+  }
+
+  &:hover p,
+  &:hover span {
+    color: #8dd18b !important;
+  }
+`;
+
 const fadeInAnimation = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(200px);
   }
   100% {
     opacity: 1;
@@ -141,6 +161,7 @@ const Wrapper = styled.section`
   align-items: center;
   font-family: "Dosis";
   position: relative;
+  border-bottom: 5px solid #8dd18b;
 
   nav img {
     width: 250px;
@@ -161,8 +182,8 @@ const Wrapper = styled.section`
     margin: 45px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #8dd18b;
-    font-size: 20px;
+    color: #2e4b2d;
+    font-size: 21px;
     font-weight: 700;
     position: relative;
     text-decoration: none;
@@ -179,11 +200,23 @@ const Wrapper = styled.section`
     transform: translateX(-50%);
   }
 
+  li:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
   p {
     color: #8dd18b;
     font-weight: 500;
     font-size: 18px;
     cursor: pointer;
+  }
+
+  p:hover {
+    color: white;
   }
 
   @media (max-width: 1023px) {
@@ -202,8 +235,7 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 767px) {
-    background-image: url("https://i.pinimg.com/564x/5b/67/ce/5b67ce82a211443957c71d0c2624c7ae.jpg");
-    background-size: cover;
+    background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
 
     nav {
       display: none;
@@ -234,8 +266,8 @@ const NavMenuHamburger = styled.div`
 `;
 
 const Icon = styled.div`
-  background-color: #8dd18b;
-  color: #00000;
+  background-color: #2e4b2d;
+  color: white;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -254,17 +286,17 @@ const Icon = styled.div`
   }
 
   a {
-    color: #262626;
+    color: white;
   }
 
   span {
     cursor: pointer;
-    color: #262626;
+    color: white;
   }
 
-  a:hover,
-  span:hover {
-    color: white;
+  &:hover a,
+  &:hover span {
+    color: #8dd18b;
     transition: color 0.3s ease;
   }
 
@@ -285,7 +317,7 @@ const Img = styled.img`
   z-index: -1;
 
   &.fadeIn {
-    animation: ${fadeInAnimation} 2s ease;
+    animation: ${fadeInAnimation} 1s ease;
   }
 
   @media (max-width: 1023px) {
@@ -333,5 +365,6 @@ const ImgPerson = styled.img`
     display: initial;
     width: 220px;
     margin: 70px 0;
+    z-index: 1;
   }
 `;

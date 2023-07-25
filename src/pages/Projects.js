@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { BsPlusCircleFill } from "react-icons/bs";
+import { MdZoomOutMap } from "react-icons/md";
 import projects from "../lists/projects";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -55,14 +57,14 @@ export default function Projects({ project, setIdProjectSelected }) {
         </Description>
 
         <ArrowLeft visible={scrollLeftVisible.toString()} onClick={scrollLeft}>
-          <BiLeftArrowAlt fontSize={"35px"} />
+          <BiLeftArrowAlt fontSize={"60px"} />
         </ArrowLeft>
 
         <ArrowRight
           visible={scrollRightVisible.toString()}
           onClick={scrollRight}
         >
-          <BiRightArrowAlt fontSize={"35px"} />
+          <BiRightArrowAlt fontSize={"60px"} />
         </ArrowRight>
 
         <ProjectsContainer
@@ -71,11 +73,14 @@ export default function Projects({ project, setIdProjectSelected }) {
         >
           {projects.map((project, index) => (
             <div key={index}>
-              <img
-                src={project.image}
-                alt={project.title}
-                onClick={() => navigateToProject(project.pathName)}
-              />
+              <ImageProject onClick={() => navigateToProject(project.pathName)}>
+                <img src={project.image} alt={project.title} />
+
+                <p>
+                  <MdZoomOutMap fontSize={"50px"} />
+                </p>
+              </ImageProject>
+
               <div>
                 <h1>{project.title}</h1>
 
@@ -97,11 +102,34 @@ export default function Projects({ project, setIdProjectSelected }) {
   );
 }
 
+const ImageProject = styled.section`
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+
+  &:hover img {
+    filter: grayscale(100%);
+  }
+
+  &:hover p {
+    display: initial;
+  }
+
+  p {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    margin: auto;
+    display: none;
+    color: #8dd18b;
+  }
+`;
+
 const ArrowLeft = styled.div`
   position: absolute;
   background-color: #8dd18b;
-  width: 40px;
-  height: 50px;
+  width: 50px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,8 +156,8 @@ const ArrowRight = styled.div`
   position: absolute;
   right: 10px;
   background-color: #8dd18b;
-  width: 40px;
-  height: 50px;
+  width: 50px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,6 +182,7 @@ const ArrowRight = styled.div`
 
 const Wrapper = styled.div`
   background-color: #8dd18b;
+  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
   padding: 10vh 0;
 
   > div {
@@ -165,20 +194,21 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-  background-color: #262626;
+  background-color: #8dd18b;
+  /* background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg"); */
   padding: 20px;
-  color: white;
-  border: 1px solid white;
+  color: #2e4b2d;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid #d3d3d3;
 
   h1 {
     font-family: "Dosis";
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #8dd18b;
+    color: #2e4b2d;
   }
 
   @media (max-width: 767px) {
@@ -201,13 +231,12 @@ const Description = styled.div`
 `;
 
 const ProjectsContainer = styled.div`
-  border: 1px solid white;
   padding: 20px;
   align-items: center;
   overflow-y: auto;
-  background-color: #262626;
   scrollbar-width: thin;
   scrollbar-color: #8dd18b #262626;
+  background-color: #8dd18b;
   display: flex;
   position: relative;
 
@@ -223,19 +252,18 @@ const ProjectsContainer = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 10px;
-    border: 2px solid #262626;
   }
 
   > div {
     width: fit-content;
     height: fit-content;
-    margin: 0 10px;
-    border: 2px solid #8dd18b;
+    margin: 0px 10px 20px 0px;
+    border: 1px solid white;
   }
 
   > div > div {
     display: flex;
-    background-color: #262626;
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     height: 40px;
@@ -243,14 +271,14 @@ const ProjectsContainer = styled.div`
   }
 
   h1 {
-    color: #8dd18b;
+    color: #2e4b2d;
     font-weight: 600;
     font-size: 20px;
     text-transform: uppercase;
   }
 
   span {
-    background-color: #8dd18b;
+    background-color: #c4c4c4;
     margin-right: 10px;
     padding: 3px;
     border-radius: 5px;
@@ -260,11 +288,11 @@ const ProjectsContainer = styled.div`
   }
 
   button {
-    background-color: transparent;
+    background-color: #8dd18b;
     border-radius: 10px;
     border: 1px solid #8dd18b;
-    color: #8dd18b;
-    padding: 3px;
+    color: #262626;
+    padding: 3px 6px;
     cursor: pointer;
     font-size: 17px;
   }
@@ -288,6 +316,7 @@ const ProjectsContainer = styled.div`
     height: fit-content;
     padding: 5px;
     font-size: 14px;
+    overflow-y: auto;
 
     img {
       height: 50vh;

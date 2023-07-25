@@ -3,7 +3,10 @@
 
 body {
   font-family: "Raleway";
-  background-color: #262626;
+  background-color: #444444;
+  background-image: url("https://monophy.com/media/joYZQLXK0DITrRAR7K/monophy.gif");
+  background-size: contain;
+  background-repeat: repeat-y;
   box-sizing: border-box;
 }
 
@@ -12,8 +15,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #8dd18b; 
-  border-radius: 5px; 
+  background-color: #8dd18b;
+  border-radius: 5px;
   border: 2px solid #262626;
 }
 

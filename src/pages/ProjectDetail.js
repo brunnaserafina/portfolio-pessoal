@@ -44,13 +44,21 @@ export default function ProjectDetail() {
             {/* <li>Acessar a aplicação</li> */}
 
             <li>
-              <a href={project?.repositoryFront} target="_blank" rel="noreferrer">
+              <a
+                href={project?.repositoryFront}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Repositório front-end
               </a>
             </li>
 
             <li>
-              <a href={project?.repositoryBack} target="_blank" rel="noreferrer">
+              <a
+                href={project?.repositoryBack}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Repositório back-end
               </a>
             </li>
@@ -87,7 +95,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
 `;
 
 const Title = styled.div`
@@ -103,6 +111,7 @@ const Title = styled.div`
   h2 {
     font-weight: 700;
     color: white;
+    padding: 5px;
     text-transform: uppercase;
   }
 `;
@@ -225,4 +234,5 @@ const Gif = styled.img`
   height: 400px;
   object-fit: cover;
   object-position: top;
+  border-radius: 5px;
 `;
