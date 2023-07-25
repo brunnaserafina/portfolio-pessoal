@@ -57,9 +57,9 @@ export default function Home({
           open={openMenuHamburger}
         >
           {openMenuHamburger ? (
-            <AiOutlineClose fontSize={"30px"} color="#8dd18b" />
+            <AiOutlineClose fontSize={"30px"} color="#2e4b2d" />
           ) : (
-            <GiHamburgerMenu fontSize={"35px"} color="#8dd18b" />
+            <GiHamburgerMenu fontSize={"35px"} color="#2e4b2d" />
           )}
         </MenuHamburger>
 
@@ -251,7 +251,7 @@ const NavMenuHamburger = styled.div`
   }
 
   @media (max-width: 767px) {
-    background-color: #262626;
+    background-color: #8dd18b;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -363,8 +363,7 @@ const ImgPerson = styled.img`
 
   @media (max-width: 767px) {
     display: initial;
-    width: 220px;
-    margin: 70px 0;
+    width: 100%;
     z-index: 1;
   }
 `;

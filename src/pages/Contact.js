@@ -488,5 +488,5 @@ const CopyRight = styled.div`
   margin: 50px 0px 30px 0px;
   position: relative;
   bottom: 0;
-  color: #d3d3d3;
+  color: #2e4b2d;
 `;
