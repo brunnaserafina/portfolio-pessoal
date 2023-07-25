@@ -40,6 +40,8 @@ export default function ProjectDetail() {
             <Gif src={project.laptopImage} alt="Gif" />
           </Laptop>
 
+          <Img src={project.laptopImage} />
+
           <ul>
             {/* <li>Acessar a aplicação</li> */}
 
@@ -87,6 +89,15 @@ export default function ProjectDetail() {
   );
 }
 
+const Img = styled.img`
+  display: none;
+  border-radius: 5px;
+
+  @media (max-width: 767px) {
+    display: initial;
+  }
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -132,7 +143,7 @@ const CloseIconWrapper = styled.div`
 const HorizontalLine = styled.span`
   width: 100%;
   height: 1px;
-  background-color: #d3d3d3;
+  background-color: white;
   margin-bottom: 20px;
 `;
 
@@ -208,6 +219,14 @@ const ProjectInfo = styled.div`
   li:hover {
     font-weight: 600;
   }
+
+  @media (max-width: 767px) {
+    width: 95vw;
+
+    img {
+      width: 95vw;
+    }
+  }
 `;
 
 const Triangle = styled.div`
@@ -222,6 +241,12 @@ const Triangle = styled.div`
 
 const Laptop = styled.div`
   position: relative;
+
+  @media (max-width: 767px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 const Gif = styled.img`
