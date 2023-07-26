@@ -169,7 +169,7 @@ const ProjectInfo = styled.div`
   }
 
   > p {
-    font-size: 16px;
+    font-size: 18px;
     color: #2e4b2d;
   }
 
@@ -210,6 +210,7 @@ const ProjectInfo = styled.div`
     align-items: center;
     cursor: pointer;
     color: #2e4b2d;
+    font-size: 20px;
   }
 
   a {

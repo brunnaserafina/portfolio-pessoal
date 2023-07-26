@@ -5,9 +5,10 @@ body {
   font-family: "Raleway";
   background-color: #444444;
   background-image: url("https://monophy.com/media/joYZQLXK0DITrRAR7K/monophy.gif");
-  background-size: contain;
+  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
+  /* background-size: contain;
   background-repeat: repeat-y;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 
 body::-webkit-scrollbar {

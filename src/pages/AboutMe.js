@@ -104,7 +104,9 @@ export default function AboutMe({ aboutme }) {
 
                   <h6>
                     {certificate.category} em <br></br>
-                    {certificate.title}
+                    <a href={certificate.link} target="_blank" rel="noreferrer">
+                      {certificate.title}
+                    </a>
                     <br></br>
                     {certificate.institution}
                   </h6>
@@ -123,7 +125,8 @@ export default function AboutMe({ aboutme }) {
                   <span>{differential.icon}</span>
 
                   <h6>
-                    {differential.title}
+                    <bold>{differential.title}</bold>
+
                     <br></br>
                   </h6>
                 </div>
@@ -228,6 +231,19 @@ const Container = styled.div`
     margin-bottom: 10px;
     font-weight: 600;
     height: 60px;
+  }
+
+  bold {
+    font-weight: 700;
+  }
+
+  a {
+    color: #2e4b2d;
+    font-weight: 700;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   > div {

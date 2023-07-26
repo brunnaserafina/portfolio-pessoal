@@ -1,14 +1,11 @@
 import { styled } from "styled-components";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
-import { BsPlusCircleFill } from "react-icons/bs";
 import { MdZoomOutMap } from "react-icons/md";
 import projects from "../lists/projects";
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-export default function Projects({ project, setIdProjectSelected }) {
+export default function Projects({ project }) {
   const projectsContainerRef = useRef(null);
-  const navigate = useNavigate();
   const [scrollLeftVisible, setScrollLeftVisible] = useState(false);
   const [scrollRightVisible, setScrollRightVisible] = useState(true);
 
@@ -33,10 +30,6 @@ export default function Projects({ project, setIdProjectSelected }) {
       });
     }
   };
-
-  function navigateToProject(projectName) {
-    navigate(`/project/${projectName}`);
-  }
 
   const scrollRight = () => {
     if (projectsContainerRef.current) {
@@ -73,12 +66,14 @@ export default function Projects({ project, setIdProjectSelected }) {
         >
           {projects.map((project, index) => (
             <div key={index}>
-              <ImageProject onClick={() => navigateToProject(project.pathName)}>
-                <img src={project.image} alt={project.title} />
+              <ImageProject>
+                <a href={`/project/${project.pathName}`}>
+                  <img src={project.image} alt={project.title} />
 
-                <p>
-                  <MdZoomOutMap fontSize={"50px"} />
-                </p>
+                  <p>
+                    <MdZoomOutMap fontSize={"50px"} />
+                  </p>
+                </a>
               </ImageProject>
 
               <div>
@@ -90,8 +85,10 @@ export default function Projects({ project, setIdProjectSelected }) {
                   ))}
                 </div>
 
-                <button onClick={() => navigateToProject(project.pathName)}>
-                  ver detalhes do projeto
+                <button>
+                  <a href={`/project/${project.pathName}`}>
+                    ver detalhes do projeto
+                  </a>
                 </button>
               </div>
             </div>
@@ -297,7 +294,12 @@ const ProjectsContainer = styled.div`
     font-size: 17px;
   }
 
-  button:hover {
+  button a {
+    color: #262626;
+  }
+
+  button:hover,
+  button:hover a {
     color: white;
     border-color: white;
     -webkit-transform: scale(1.1);

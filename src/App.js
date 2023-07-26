@@ -15,7 +15,6 @@ function App() {
   const aboutme = useRef(null);
   const project = useRef(null);
   const contact = useRef(null);
-  const [idProjectSelected, setIdProjectSelected] = useState(0);
 
   const scrollToSection = (elementRef) => {
     window.scrollTo({
@@ -41,10 +40,7 @@ function App() {
                   contact={contact}
                 />
                 <AboutMe aboutme={aboutme} />
-                <Projects
-                  project={project}
-                  setIdProjectSelected={setIdProjectSelected}
-                />
+                <Projects project={project} />
                 <Contact
                   scrollToSection={scrollToSection}
                   home={home}
@@ -56,15 +52,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/project/:projectName"
-            element={
-              <ProjectDetail
-                idProjectSelected={idProjectSelected}
-                setIdProjectSelected={setIdProjectSelected}
-              />
-            }
-          />
+          <Route path="/project/:projectName" element={<ProjectDetail />} />
         </Routes>
       </Router>
     </>
