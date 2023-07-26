@@ -3,7 +3,7 @@ import { keyframes, styled } from "styled-components";
 import { AiFillGithub, AiFillLinkedin, AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoLogoWhatsapp } from "react-icons/io";
-import logo from "../assets/images/Logo5.png";
+import logo from "../assets/images/Logo7.png";
 import person from "../assets/images/Logo nav1.png";
 
 export default function Home({

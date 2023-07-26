@@ -285,22 +285,22 @@ const ProjectsContainer = styled.div`
   }
 
   button {
-    background-color: #8dd18b;
+    background-color: #2e4b2d;
     border-radius: 10px;
-    border: 1px solid #8dd18b;
-    color: #262626;
+    border: 1px solid #2e4b2d;
+    color: #8dd18b;
     padding: 3px 6px;
     cursor: pointer;
     font-size: 17px;
   }
 
   button a {
-    color: #262626;
+    color: white;
   }
 
   button:hover,
   button:hover a {
-    color: white;
+    color: #8dd18b;
     border-color: white;
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);

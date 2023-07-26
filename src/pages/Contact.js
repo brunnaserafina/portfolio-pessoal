@@ -236,6 +236,7 @@ const TalkToMe = styled.div`
 
   h2 {
     margin-top: 5vh;
+    font-size: 24px !important;
   }
 
   p {
