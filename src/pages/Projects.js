@@ -247,7 +247,7 @@ const ProjectsContainer = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: #d3d3d3;
     border-radius: 10px;
   }
 

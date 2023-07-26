@@ -107,6 +107,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
+  /* background-color: white; */
 `;
 
 const Title = styled.div`
@@ -142,8 +143,8 @@ const CloseIconWrapper = styled.div`
 
 const HorizontalLine = styled.span`
   width: 100%;
-  height: 1px;
-  background-color: white;
+  height: 2px;
+  background-color: #d3d3d3;
   margin-bottom: 20px;
 `;
 
@@ -169,7 +170,7 @@ const ProjectInfo = styled.div`
   }
 
   > p {
-    font-size: 18px;
+    font-size: 20px;
     color: #2e4b2d;
   }
 
@@ -210,7 +211,7 @@ const ProjectInfo = styled.div`
     align-items: center;
     cursor: pointer;
     color: #2e4b2d;
-    font-size: 20px;
+    font-size: 19px;
   }
 
   a {
