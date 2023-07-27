@@ -107,6 +107,8 @@ export default function Home({
       <Img ref={logoRef} src={logo} alt="Background Logo" />
 
       <ImgPerson src={person} alt="Avatar" />
+
+      <HorizontalLine></HorizontalLine>
     </Wrapper>
   );
 }
@@ -123,7 +125,7 @@ const HorizontalLine = styled.div`
 
 const WhatsappDiv = styled.span`
   p {
-    color: #2e4b2d !important;
+    color: white !important;
   }
 
   &:hover p,
@@ -189,6 +191,8 @@ const Wrapper = styled.section`
     text-decoration: none;
     list-style: none;
     cursor: pointer;
+    padding: 5px 15px;
+    background-color: #FF9862;
   }
 
   li:hover::after {
@@ -198,6 +202,9 @@ const Wrapper = styled.section`
     left: 50%;
     font-weight: bold;
     transform: translateX(-50%);
+    background-color: #FF9862;
+    width: 100%;
+    text-align: center;
   }
 
   li:hover {

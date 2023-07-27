@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import techIcons from "../lists/techIcons";
 import differentials from "../lists/differentials";
 import certifications from "../lists/certifications";
+import pixelArt from "../assets/images/pixil-frame-0.png";
 
 export default function AboutMe({ aboutme }) {
   const [sliderRef, setSliderRef] = useState(null);
@@ -183,7 +184,7 @@ const TechContainer = styled.div`
     margin-top: 8px;
     font-weight: 700;
     color: #2e4b2d;
-
+    padding: 5px;
     font-size: 14px;
   }
 
@@ -313,8 +314,9 @@ const Blockquote = styled.blockquote`
   }
 `;
 const Wrapper = styled.section`
-  background-color: #c4c4c4;
-  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
+  background-color: #FFCABF;
+  /* background: linear-gradient(90deg, rgba(201,132,142,1) 0%, rgba(255,224,218,0.8995973389355743) 54%); */
+  /* background-image: url("https://art.pixilart.com/sr2caba599678aws3.png"); */
 `;
 
 const Apresentation = styled.div`

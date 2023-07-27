@@ -106,8 +106,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
-  /* background-color: white; */
+  background-color: white;
 `;
 
 const Title = styled.div`

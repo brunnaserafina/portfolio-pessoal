@@ -178,8 +178,9 @@ const ArrowRight = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #8dd18b;
-  background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
+  background-color: #ffcabf;
+  /* background: linear-gradient(90deg, rgba(201,132,142,1) 28%, rgba(255,224,218,1) 54%); */
+  /* background-image: url("https://art.pixilart.com/sr2caba599678aws3.png"); */
   padding: 10vh 0;
 
   > div {

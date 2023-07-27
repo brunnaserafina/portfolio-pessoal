@@ -1,5 +1,5 @@
-import project01 from "../assets/images/project-todolistt.png";
-import project02 from "../assets/images/project-my-wallett.png";
+import project01 from "../assets/images/laptoptodolist.png";
+import project02 from "../assets/images/laptopmywallet.png";
 import laptopToDoList from "../assets/images/laptop-todolist.gif";
 import laptopMyWallet from "../assets/images/laptop-mywallet.gif";
 
