@@ -1,8 +1,10 @@
 import capaToDoList from "../assets/images/capa-todolist.png";
 import capaMyWallet from "../assets/images/capa-mywallet.png";
 import capaParrots from "../assets/images/capa-parrotsgame.png";
+import capaBackToTheDisc from "../assets/images/capa-backtothedisc.png";
 import laptopToDoList from "../assets/images/laptop-todolist.gif";
 import laptopMyWallet from "../assets/images/laptop-mywallet.gif";
+import laptopBackToTheDisc from "../assets/images/laptop-backtothedisc.gif";
 
 const projects = [
   {
@@ -22,6 +24,22 @@ const projects = [
   },
   {
     id: 2,
+    pathName: "backtothedisc",
+    title: "Back To The Disc",
+    function: "E-commerce",
+    subtitle: "E-commerce de discos de vinil",
+    description:
+      "Página web para compra de discos de vinil desenvolvida por um time de duas pessoas. Possui funcionalidades como login, cadastro, listagem de álbuns, barra de pesquisa, adicionar e remover disco do carrinho, escolher a quantidade do disco comprado, procurar endereço pelo CEP, confirmação pós compra pelo e-mail e histórico de compras.",
+    techs: ["Reactjs", "Nodejs", "MongoDB"],
+    image: capaBackToTheDisc,
+    laptopImage: laptopBackToTheDisc,
+    gallery: {},
+    repositoryFront: "https://github.com/brunnaserafina/back-to-the-disc",
+    repositoryBack:
+      "https://github.com/brunnaserafina/back-to-the-disc-backend",
+  },
+  {
+    id: 3,
     pathName: "mywallet",
     title: "My Wallet",
     function: "Carteira virtual",
@@ -50,7 +68,7 @@ const projects = [
     gallery: {},
     repositoryFront: "https://github.com/brunnaserafina/parrots-card-game",
     repositoryBack: "",
-    deploy: "https://brunnaserafina.github.io/parrots-card-game/"
+    deploy: "https://brunnaserafina.github.io/parrots-card-game/",
   },
 ];
 export default projects;
