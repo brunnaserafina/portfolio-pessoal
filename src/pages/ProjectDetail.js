@@ -54,13 +54,19 @@ export default function ProjectDetail() {
             </li>
 
             <li>
-              <a
-                href={project?.repositoryBack}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Repositório back-end
-              </a>
+              {project.repositoryBack.length > 0 ? (
+                <a
+                  href={project?.repositoryBack}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Repositório back-end
+                </a>
+              ) : (
+                <a href={project?.deploy} target="_blank" rel="noreferrer">
+                  Acesse a aplicação
+                </a>
+              )}
             </li>
 
             {/* <li>
@@ -270,6 +276,6 @@ const Gif = styled.img`
 
   @media (max-width: 1023px) {
     width: 590px !important;
-  height: 400px;
+    height: 400px;
   }
 `;

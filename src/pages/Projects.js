@@ -25,7 +25,7 @@ export default function Projects({ project }) {
     if (projectsContainerRef.current) {
       projectsContainerRef.current.scrollBy({
         top: 0,
-        left: -200,
+        left: -1000,
         behavior: "smooth",
       });
     }
@@ -35,7 +35,7 @@ export default function Projects({ project }) {
     if (projectsContainerRef.current) {
       projectsContainerRef.current.scrollBy({
         top: 0,
-        left: 200,
+        left: 1000,
         behavior: "smooth",
       });
     }

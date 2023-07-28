@@ -1,5 +1,6 @@
 import capaToDoList from "../assets/images/capa-todolist.png";
 import capaMyWallet from "../assets/images/capa-mywallet.png";
+import capaParrots from "../assets/images/capa-parrotsgame.png";
 import laptopToDoList from "../assets/images/laptop-todolist.gif";
 import laptopMyWallet from "../assets/images/laptop-mywallet.gif";
 
@@ -33,6 +34,23 @@ const projects = [
     gallery: {},
     repositoryFront: "https://github.com/brunnaserafina/my-wallet",
     repositoryBack: "https://github.com/brunnaserafina/my-wallet-api",
+  },
+  {
+    id: 9,
+    pathName: "parrotcardgame",
+    title: "Parrot Card Game",
+    function: "Jogo da memória",
+    subtitle: "Jogo da memória",
+    description:
+      "Site de jogo da memória com a temática de papagaios dançantes. Envolve bastante lógica de programação permitindo que o usuário possa escolher com quantas cartas quer jogar, selecionar para desvirar uma dupla de cartas e visualizar em quantas jogadas ganhou.",
+    techs: ["HTML", "CSS", "JavaScript"],
+    image: capaParrots,
+    laptopImage:
+      "https://user-images.githubusercontent.com/106851605/215228207-6d2f6e65-48c3-46b9-a564-8f91a0083af4.gif",
+    gallery: {},
+    repositoryFront: "https://github.com/brunnaserafina/parrots-card-game",
+    repositoryBack: "",
+    deploy: "https://brunnaserafina.github.io/parrots-card-game/"
   },
 ];
 export default projects;
