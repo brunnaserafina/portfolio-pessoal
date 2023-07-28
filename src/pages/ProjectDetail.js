@@ -104,7 +104,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: #ffcabf;
 `;
 
 const Title = styled.div`
@@ -141,19 +141,19 @@ const CloseIconWrapper = styled.div`
 const HorizontalLine = styled.span`
   width: 100%;
   height: 2px;
-  background-color: #d3d3d3;
+  background-color: white;
   margin-bottom: 20px;
 `;
 
 const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 760px;
+  width: 900px;
   font-family: "Dosis";
   z-index: 2;
 
   img {
-    width: 760px;
+    width: 900px;
   }
 
   h1 {
@@ -219,6 +219,14 @@ const ProjectInfo = styled.div`
     font-weight: 600;
   }
 
+  @media (max-width: 1023px) {
+    width: 767px;
+
+    img {
+      width: 767px;
+    }
+  }
+
   @media (max-width: 767px) {
     width: 95vw;
 
@@ -254,9 +262,14 @@ const Gif = styled.img`
   left: 0;
   right: 0;
   margin: auto;
-  width: 590px !important;
-  height: 400px;
+  width: 690px !important;
+  height: 470px;
   object-fit: cover;
   object-position: top;
   border-radius: 5px;
+
+  @media (max-width: 1023px) {
+    width: 590px !important;
+  height: 400px;
+  }
 `;

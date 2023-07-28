@@ -269,7 +269,7 @@ const ProjectsContainer = styled.div`
   h1 {
     color: #2e4b2d;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
   }
 
