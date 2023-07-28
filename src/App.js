@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "../src/assets/styles/reset.css";
-import "../src/assets/styles/style.css";
+import { useRef } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import { useRef, useState } from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ProjectDetail from "./pages/ProjectDetail";
+import "../src/assets/styles/reset.css";
+import "../src/assets/styles/style.css";
 
 function App() {
   const home = useRef(null);

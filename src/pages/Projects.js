@@ -77,7 +77,7 @@ export default function Projects({ project }) {
               </ImageProject>
 
               <div>
-                <h1>{project.title}</h1>
+                <h1>{project.function}</h1>
 
                 <div>
                   {project.techs.map((tech, index) => (
@@ -179,8 +179,6 @@ const ArrowRight = styled.div`
 
 const Wrapper = styled.div`
   background-color: #ffcabf;
-  /* background: linear-gradient(90deg, rgba(201,132,142,1) 28%, rgba(255,224,218,1) 54%); */
-  /* background-image: url("https://art.pixilart.com/sr2caba599678aws3.png"); */
   padding: 10vh 0;
 
   > div {
@@ -193,7 +191,6 @@ const Wrapper = styled.div`
 
 const Description = styled.div`
   background-color: #8dd18b;
-  /* background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg"); */
   padding: 20px;
   color: #2e4b2d;
   display: flex;
@@ -266,6 +263,7 @@ const ProjectsContainer = styled.div`
     align-items: center;
     height: 40px;
     padding: 0 10px;
+    width: 100%;
   }
 
   h1 {

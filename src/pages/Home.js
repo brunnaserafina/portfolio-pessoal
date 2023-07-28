@@ -3,8 +3,8 @@ import { keyframes, styled } from "styled-components";
 import { AiFillGithub, AiFillLinkedin, AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoLogoWhatsapp } from "react-icons/io";
-import logo from "../assets/images/Logo7.png";
-import person from "../assets/images/Logo nav1.png";
+import logo from "../assets/images/logo-desktop.png";
+import person from "../assets/images/logo-mobile.png";
 
 export default function Home({
   scrollToSection,
@@ -192,7 +192,7 @@ const Wrapper = styled.section`
     list-style: none;
     cursor: pointer;
     padding: 5px 15px;
-    background-color: #FF9862;
+    background-color: #ff9862;
   }
 
   li:hover::after {
@@ -202,7 +202,7 @@ const Wrapper = styled.section`
     left: 50%;
     font-weight: bold;
     transform: translateX(-50%);
-    background-color: #FF9862;
+    background-color: #ff9862;
     width: 100%;
     text-align: center;
   }
@@ -242,10 +242,16 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 767px) {
-    background-image: url("https://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg");
-
     nav {
       display: none;
+    }
+
+    li {
+      background-color: transparent;
+    }
+
+    li:hover::after {
+      background-color: transparent;
     }
   }
 `;

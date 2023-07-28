@@ -3,13 +3,9 @@
 
 body {
   font-family: "Raleway";
-  background-color: #444444;
-  background-image: url("https://monophy.com/media/joYZQLXK0DITrRAR7K/monophy.gif");
   background-image: url("https://i.pinimg.com/originals/6e/01/db/6e01db7cf74db21210c345f1e53aface.gif");
-  /* background-image: url("https://i.pinimg.com/originals/6e/01/db/6e01db7cf74db21210c345f1e53aface.gif"); */
-  /* background-image: url("hthttps://monophy.com/media/joYZQLXK0DITrRAR7K/monophy.giftps://img.freepik.com/fotos-gratis/fundo-ruidoso_1194-7547.jpg"); */
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat:repeat-y;
   box-sizing: border-box;
 }
 

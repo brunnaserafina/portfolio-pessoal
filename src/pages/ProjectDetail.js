@@ -1,8 +1,6 @@
 import { styled } from "styled-components";
 import projectToDoList from "../assets/images/laptop.png";
-import gifProject from "../assets/images/caopture.gif";
 import { AiOutlineClose } from "react-icons/ai";
-import { PiSquaresFourFill } from "react-icons/pi";
 import { useNavigate, useParams } from "react-router-dom";
 import projects from "../lists/projects";
 

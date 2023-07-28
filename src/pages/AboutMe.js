@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import techIcons from "../lists/techIcons";
 import differentials from "../lists/differentials";
 import certifications from "../lists/certifications";
-import pixelArt from "../assets/images/pixil-frame-0.png";
 
 export default function AboutMe({ aboutme }) {
   const [sliderRef, setSliderRef] = useState(null);
@@ -315,8 +314,6 @@ const Blockquote = styled.blockquote`
 `;
 const Wrapper = styled.section`
   background-color: #FFCABF;
-  /* background: linear-gradient(90deg, rgba(201,132,142,1) 0%, rgba(255,224,218,0.8995973389355743) 54%); */
-  /* background-image: url("https://art.pixilart.com/sr2caba599678aws3.png"); */
 `;
 
 const Apresentation = styled.div`
@@ -326,7 +323,6 @@ const Apresentation = styled.div`
   justify-content: center;
   height: 5 0vh;
   padding: 50px;
-  /* border-top: 2px solid white; */
 
   h2 {
     text-transform: uppercase;

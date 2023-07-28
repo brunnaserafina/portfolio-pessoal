@@ -7,7 +7,6 @@ import {
   BiLogoNodejs,
   BiLogoMongodb,
   BiLogoPostgresql,
-  BiLogoFirebase,
   BiLogoSpringBoot,
   BiLogoJava,
   BiLogoAngular,
