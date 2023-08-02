@@ -2,9 +2,11 @@ import capaToDoList from "../assets/images/capa-todolist.png";
 import capaMyWallet from "../assets/images/capa-mywallet.png";
 import capaParrots from "../assets/images/capa-parrotsgame.png";
 import capaBackToTheDisc from "../assets/images/capa-backtothedisc.png";
+import capaDrivent from "../assets/images/capa-drivent.png";
 import laptopToDoList from "../assets/images/laptop-todolist.gif";
 import laptopMyWallet from "../assets/images/laptop-mywallet.gif";
 import laptopBackToTheDisc from "../assets/images/laptop-backtothedisc.gif";
+import laptopDrivent from "../assets/images/laptop-drivent.gif";
 
 const projects = [
   {
@@ -14,7 +16,7 @@ const projects = [
     function: "Gerenciador de tarefas",
     subtitle: "Site para gerenciar tarefas",
     description:
-      "Bem-vindo ao meu projeto To Do List! Este website oferece uma experiência única para você criar e gerenciar suas tarefas diárias de forma intuitiva e eficiente.",
+      "Este website oferece uma experiência única para você criar e gerenciar suas tarefas diárias de forma intuitiva e eficiente.",
     techs: ["Reactjs", "Nodejs", "TypeScript", "PostgreSQL"],
     image: capaToDoList,
     laptopImage: laptopToDoList,
@@ -24,9 +26,31 @@ const projects = [
   },
   {
     id: 2,
+    pathName: "drivent",
+    title: "Driven.t",
+    function: "Organizador de eventos",
+    subtitle: "Site de gerenciamento de eventos",
+    description:
+      "Ao contrário do que possa parecer de início, o Driven.t não é um gerenciador de múltiplos eventos. A proposta é criar um sistema que gerencie apenas UM evento. Desta forma, para cada evento que o cliente quiser gerenciar, ele teria uma aplicação do Driven.t rodando. O funcionamento do Driven.t é relativamente simples: o usuário deverá fazer uma inscrição para o Evento (online ou presencial); para um evento de modalidade presencial, o usuário poderá escolher se deseja com ou sem hospedagem (hotel); o usuário também poderá escolher uma formas de pagamento; além disso, o usuário também escolhe as suas atividades no evento; por fim, também é possível emitir um certificado de participação do evento.",
+    techs: [
+      "Reactjs",
+      "Nodejs",
+      "TypeScript",
+      "Firebase",
+      "PostgreSQL",
+      "Redis",
+    ],
+    image: capaDrivent,
+    laptopImage: laptopDrivent,
+    gallery: {},
+    repositoryFront: "https://github.com/brunnaserafina/drivent",
+    repositoryBack: "https://github.com/brunnaserafina/drivent-backend",
+  },
+  {
+    id: 3,
     pathName: "backtothedisc",
     title: "Back To The Disc",
-    function: "E-commerce",
+    function: "E-commerce de discos",
     subtitle: "E-commerce de discos de vinil",
     description:
       "Página web para compra de discos de vinil desenvolvida por um time de duas pessoas. Possui funcionalidades como login, cadastro, listagem de álbuns, barra de pesquisa, adicionar e remover disco do carrinho, escolher a quantidade do disco comprado, procurar endereço pelo CEP, confirmação pós compra pelo e-mail e histórico de compras.",
@@ -39,7 +63,7 @@ const projects = [
       "https://github.com/brunnaserafina/back-to-the-disc-backend",
   },
   {
-    id: 3,
+    id: 4,
     pathName: "mywallet",
     title: "My Wallet",
     function: "Carteira virtual",

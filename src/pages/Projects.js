@@ -329,10 +329,6 @@ const ProjectsContainer = styled.div`
       font-size: 16px;
     }
 
-    span {
-      display: none;
-    }
-
     > div {
       margin: 2px;
       flex: 0 0 90vw;
@@ -340,7 +336,7 @@ const ProjectsContainer = styled.div`
     }
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     padding: 5px;
     height: fit-content;
 
@@ -354,7 +350,7 @@ const ProjectsContainer = styled.div`
     }
 
     span {
-      font-size: 12px;
+      display: none;
     }
 
     button {
