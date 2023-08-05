@@ -15,8 +15,27 @@ const projects = [
     title: "To-do-list",
     function: "Gerenciador de tarefas",
     subtitle: "Site para gerenciar tarefas",
-    description:
-      "Este website oferece uma experiência única para você criar e gerenciar suas tarefas diárias de forma intuitiva e eficiente.",
+    description: (
+      <>
+        Este website oferece uma experiência única para criar e gerenciar
+        tarefas diárias de forma intuitiva e eficiente. Com funcionalidades como{" "}
+        <strong>cadastro</strong>, <strong>login</strong> e
+        <strong> logout</strong>, o usuário pode acessar suas listas de qualquer
+        lugar. O toque de mágica está na <strong>sidebar</strong> que abriga
+        todas as listas do usuário, permitindo uma{" "}
+        <strong>modificação da ordem dos itens</strong> e a{" "}
+        <strong>criação de novas listas</strong>. Além disso, é possível
+        <strong> visualizar as tarefas</strong> a fazer e as já concluídas de
+        acordo com a lista selecionada, com opções de <strong>adicionar</strong>
+        , <strong>editar</strong>, <strong>excluir</strong>,{" "}
+        <strong>marcar tarefas como feitas</strong> e adicionar{" "}
+        <strong>anotações</strong> e <strong>data</strong> para cada uma através
+        da sidebar na lateral direita. Outra facilidade é a{" "}
+        <strong>barra de pesquisa</strong> na parte superior do website, que
+        permite ao usuário pesquisar tarefas e listas, tornando a busca mais
+        rápida e otimizada.
+      </>
+    ),
     techs: ["Reactjs", "Nodejs", "TypeScript", "PostgreSQL"],
     image: capaToDoList,
     laptopImage: laptopToDoList,
@@ -30,8 +49,29 @@ const projects = [
     title: "Driven.t",
     function: "Organizador de eventos",
     subtitle: "Site de gerenciamento de eventos",
-    description:
-      "Ao contrário do que possa parecer de início, o Driven.t não é um gerenciador de múltiplos eventos. A proposta é criar um sistema que gerencie apenas UM evento. Desta forma, para cada evento que o cliente quiser gerenciar, ele teria uma aplicação do Driven.t rodando. O funcionamento do Driven.t é relativamente simples: o usuário deverá fazer uma inscrição para o Evento (online ou presencial); para um evento de modalidade presencial, o usuário poderá escolher se deseja com ou sem hospedagem (hotel); o usuário também poderá escolher uma formas de pagamento; além disso, o usuário também escolhe as suas atividades no evento; por fim, também é possível emitir um certificado de participação do evento.",
+    description: (
+      <>
+        Ao contrário do que possa parecer de início, o Driven.t não é um
+        gerenciador de múltiplos eventos. A proposta é criar um{" "}
+        <strong>sistema que gerencie apenas um evento por vez</strong>. Desta
+        forma, para cada evento que o cliente quiser gerenciar, ele teria uma
+        aplicação do Driven.t rodando. O funcionamento do Driven.t é
+        relativamente simples: o usuário deverá fazer <strong>inscrição</strong>{" "}
+        e <strong>login</strong> na plataforma, podendo{" "}
+        <strong> autenticar com o Github </strong>
+        já que esse é um evento de tecnologia; cadastrar seus dados; fazer uma{" "}
+        <strong>inscrição para o evento</strong> (online ou presencial); sendo
+        que para um evento de modalidade presencial, o usuário poderá{" "}
+        <strong>escolher se deseja com ou sem hospedagem</strong> (hotel); a{" "}
+        <strong>forma de pagamento</strong>; e se{" "}
+        <strong>inscrever nas atividades</strong> do evento; por fim, também é
+        possível <strong>emitir um certificado</strong> de participação do
+        evento assim que o mesmo é finalizado.
+        <br></br>
+        <br></br> - Obs.: Projeto desenvolvido em um time de 4 pessoas
+        utilizando metodologias ágeis.
+      </>
+    ),
     techs: [
       "Reactjs",
       "Nodejs",
@@ -52,8 +92,26 @@ const projects = [
     title: "Back To The Disc",
     function: "E-commerce de discos",
     subtitle: "E-commerce de discos de vinil",
-    description:
-      "Página web para compra de discos de vinil desenvolvida por um time de duas pessoas. Possui funcionalidades como login, cadastro, listagem de álbuns, barra de pesquisa, adicionar e remover disco do carrinho, escolher a quantidade do disco comprado, procurar endereço pelo CEP, confirmação pós compra pelo e-mail e histórico de compras.",
+    description: (
+      <>
+        Back To The Disc é um e-commerce dedicado aos admiradores da cultura
+        única e nostálgica dos discos de vinil. Possui funcionalidades
+        essenciais como <strong>login</strong> e <strong>cadastro</strong>,{" "}
+        sendo posssível também visualizar a página sem estar logado. Na página
+        inicial é possível explorar a <strong>listagem de álbuns</strong>,
+        incluindo clássicos inesquecíveis e lançamentos mais recentes.
+        Facilitando ainda mais a experiência, o website possui uma{" "}
+        <strong>barra de pesquisa</strong> intuitiva que permite localizar
+        discos específicos com facilidade. Para comprar um produto basta
+        <strong> adicionar o disco no carrinho</strong>,{" "}
+        <strong>escolher a quantidade</strong>,{" "}
+        <strong>procurar endereço pelo CEP</strong>, com a possibilidade de{" "}
+        <strong>confirmação</strong> pós compra pelo <strong>e-mail</strong> e
+        <strong> visualização do histórico de compras</strong>.<br></br>
+        <br></br> - Obs.: Projeto desenvolvido em um time de 2 pessoas
+        utilizando metodologias ágeis.
+      </>
+    ),
     techs: ["Reactjs", "Nodejs", "MongoDB"],
     image: capaBackToTheDisc,
     laptopImage: laptopBackToTheDisc,
@@ -68,8 +126,18 @@ const projects = [
     title: "My Wallet",
     function: "Carteira virtual",
     subtitle: "Carteira virtual",
-    description:
-      "Esta é uma aplicação web mobile para controle de gastos, ajudando o usuário a se organizar financeiramente.",
+    description: (
+      <>
+        Esta é uma aplicação web mobile projetada para oferecer um controle
+        financeiro eficiente e auxiliar os usuários a alcançar uma maior
+        organização em suas finanças pessoais. Possui <strong>cadastro</strong>,{" "}
+        <strong>login</strong> e <strong>logout</strong>, facilitando o
+        salvamento dos dados na conta do usuário de forma segura e suas
+        funcionalidades incluem <strong>adicionar entradas e saídas</strong>,
+        para
+        <strong> visualizar as receitas e despesas</strong> correntes.
+      </>
+    ),
     techs: ["Reactjs", "Nodejs", "MongoDB"],
     image: capaMyWallet,
     laptopImage: laptopMyWallet,
@@ -83,8 +151,17 @@ const projects = [
     title: "Parrot Card Game",
     function: "Jogo da memória",
     subtitle: "Jogo da memória",
-    description:
-      "Site de jogo da memória com a temática de papagaios dançantes. Envolve bastante lógica de programação permitindo que o usuário possa escolher com quantas cartas quer jogar, selecionar para desvirar uma dupla de cartas e visualizar em quantas jogadas ganhou.",
+    description: (
+      <>
+        Site de jogo da memória com a temática de papagaios dançantes. Esse
+        projeto envolveu bastante lógica de programação já que fidelizava o
+        sentido do jogo, permitindo que o usuário possa{" "}
+        <strong>escolher com quantas cartas quer jogar</strong>,{" "}
+        <strong>selecionar para desvirar</strong> uma dupla de cartas,{" "}
+        <strong>visualizar em quantas jogadas ganhou</strong> e{" "}
+        <strong>optar por jogar novamente</strong>.
+      </>
+    ),
     techs: ["HTML", "CSS", "JavaScript"],
     image: capaParrots,
     laptopImage:

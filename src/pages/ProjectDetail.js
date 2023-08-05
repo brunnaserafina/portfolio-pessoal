@@ -109,8 +109,12 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #ffcabf;
+
+  @media (max-width: 767px) {
+    background-color: #8dd18b;
+  }
 `;
 
 const Title = styled.div`
@@ -173,8 +177,13 @@ const ProjectInfo = styled.div`
   }
 
   > p {
-    font-size: 20px;
+    font-size: 18px;
     color: #2e4b2d;
+    text-align: justify;
+  }
+
+  strong {
+    font-weight: 600;
   }
 
   > div {
@@ -183,7 +192,7 @@ const ProjectInfo = styled.div`
   }
 
   > div > div {
-    background-color: #8dd18b;
+    background-color: #ff9862;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +203,7 @@ const ProjectInfo = styled.div`
     font-weight: 600;
     margin-right: 10px;
     padding: 5px;
+    margin-bottom: 5px;
   }
 
   > div > div > p {
@@ -239,6 +249,18 @@ const ProjectInfo = styled.div`
     img {
       width: 95vw;
     }
+
+    > div {
+      flex-wrap: wrap;
+    }
+
+    li {
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
   }
 `;
 
@@ -250,6 +272,10 @@ const Triangle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Laptop = styled.div`
